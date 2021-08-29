@@ -28,9 +28,9 @@ while (x1 <= bound):
         while (x2 <= bound):
             y2 = 0
             while(y2 <= bound):
-                #Condition (y1 >= y2) is there to avoid double counting. If y1 >= y2, then y1 and y2 were hit before in opposite roles
-                #(due to the order of loops), hence count them only once. Important: Cannot use y2 = y1 as starting condition (we already use x2=x1 as a start hence this would miss triangles)
-                if (y1 >= y2) and (IsTriangle(x1,y1,x2,y2) and IsRightTriangle(x1,y1,x2,y2)):
+                #Condition (y1 >= y2 or x2 > x1) is there to avoid double counting. If y1 >= y2, then y1 and y2 were hit before in opposite roles
+                #(due to the order of loops), hence count them only once. If y1<y2, ensure that x2 > x1
+                if (y1 >= y2 or x2 > x1) and (IsTriangle(x1,y1,x2,y2) and IsRightTriangle(x1,y1,x2,y2)):
                     n += 1
                 y2 += 1
             x2 += 1
