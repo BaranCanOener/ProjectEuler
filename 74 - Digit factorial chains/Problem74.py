@@ -4,7 +4,8 @@ Created on Sun Aug 29 19:41:03 2021
 
 @author: baran
 
-Problem 74 - Digit factorial chains - more efficient method: ~4.2s vs ~65s on my computer
+Problem 74 - Digit factorial chains - more efficient method: ~1.82s vs ~65s on my computer
+The performance gain comes from caching previous search results and using a precomputed factorial table
 """
 
 def fact(n):
@@ -15,11 +16,13 @@ def fact(n):
         i -= 1
     return fact
 
+factorialTable = [fact(0),fact(1),fact(2),fact(3),fact(4),fact(5),fact(6),fact(7),fact(8),fact(9)]
+
 def SumFactorialDigits(n):
     s = str(n)
     summation = 0
     for d in s:
-        summation += fact(int(d))
+        summation += factorialTable[int(d)]
     return summation
 
 
