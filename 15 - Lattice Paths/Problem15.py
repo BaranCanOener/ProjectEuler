@@ -19,7 +19,7 @@ The cell (k,l) is the sum of the adjacent bottom and right cells, see the below 
 	..	20	10	4   2 
 	..	10	6	3   1
 	5	4	3	2   0
-k:  3   2   1   0  
+k:  	3   	2   	1   	0  
 
 This is effectively just rotated Pascal's triangle, and (n-1,n-1) will be 2n choose n.
 """
